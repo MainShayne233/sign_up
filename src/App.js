@@ -7,21 +7,42 @@ class App extends Component {
       <div className="App">
         <FormFactor
           fields={fields}
+          submit={submit}
+          onSubmit={onSubmit}
+          onChange={onChange}
         />
       </div>
     );
   }
 }
 
+const submit = {
+  button: true,
+}
+
+const onSubmit = (form, event) => {
+  event.preventDefault()
+  console.log(':)')
+}
+
+const onChange = (form, event) => {
+  console.log(':))')
+}
+
 const fields = [
   {
     name: 'username',
     placeholder: 'Username',
+    defaultValue: 'Shayne',
     fieldType: 'input',
     dataType: 'string',
+    // onChange: () => {
+    //   console.log(':o')
+    // },
   },
   {
     name: 'password',
+    defaultValue: "tremblay",
     placeholder: 'Password',
     fieldType: 'input',
     dataType: 'string',
